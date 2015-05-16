@@ -14,9 +14,11 @@ spring:
   profiles: cloud
 eureka:
   instance:
-    hostname: ${vcap.application.uris[0]}
-    nonSecurePort: 80
-
+    metadataMap:
+      instanceId: ${instance.guid}:${spring.application.name}:${server.port:8080}
+    hostname: ${cf.instance.ip}
+    nonSecurePort: ${cf.instance.port}
+    
 ---
 spring:
   profiles: lattice
