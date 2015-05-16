@@ -15,10 +15,10 @@ spring:
 eureka:
   instance:
     metadataMap:
-      instanceId: ${instance.guid}:${spring.application.name}:${server.port:8080}
+      instanceId: ${vcap.application.application_id}:${spring.application.name}:${server.port:8080}
     hostname: ${cf.instance.ip}
     nonSecurePort: ${cf.instance.port}
-    
+
 ---
 spring:
   profiles: lattice
