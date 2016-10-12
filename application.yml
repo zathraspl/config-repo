@@ -1,3 +1,10 @@
+logging:
+  level:
+    io:
+      spring:
+        cloud:
+          samples: INFO
+
 fortune:
   fallbackFortune: Today is your lucky day!
 
