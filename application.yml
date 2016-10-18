@@ -8,25 +8,9 @@ logging:
 fortune:
   fallbackFortune: Today is your lucky day!
 
-#eureka:
-  #instance:
-    #hostname: localhost
-    #leaseRenewalIntervalInSeconds: 10
-    #metadataMap:
-      #instanceId: ${spring.application.name}:${server.port:8080}
-  #client:
-    #serviceUrl:
-      #defaultZone: http://127.0.0.1:8761/eureka/
-
----
-
-spring:
-  profiles: cloud
 eureka:
   instance:
-    metadataMap:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${server.port:8080}}
-    hostname: ${vcap.application.uris[0]}
+    leaseRenewalIntervalInSeconds: 10
   client:
-    serviceUrl:
-      defaultZone: ${vcap.services.service-registry.credentials.uri:http://127.0.0.1:8761}/eureka/
+    registerWithEureka: false
+    fetchRegistry: false
