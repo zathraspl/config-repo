@@ -3,10 +3,10 @@ logging:
     io:
       spring:
         cloud:
-          samples: DEBUG
+          samples: INFO
 
 fortune:
-  fallbackFortune: The fog should lift today.
+  fallbackFortune: Your future is unclear.
 
 eureka:
   instance:
